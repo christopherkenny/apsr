@@ -1,17 +1,19 @@
 ---
-title: APSR Template
+title: Quarto Title for the APSR
 format:
   apsr-pdf:
     keep-tex: true  
   apsr-html: default
+runningtitle: Quarto APSR
+runningauthor: "One, Two, and Three"
 author:
-  - name: Sarah Malloc
+  - name: Author One
     affiliations:
       - name: An Organization
     note: "Author One is PhD Candidate, ABC Department, Affiliation A, 12345 NY. (a.1@example.edu)"
   - name: Eliza Dealloc
     affiliations:
-      - Another Affiliation
+      - Author Two
     note: "Author Two is Assistant Professor, Faculty of Z, Affiliation B, 42813. Corresponding Author (a.2@acme.edu) Additional notes about Author Two."
   - name: Author Three
     affiliations:
@@ -22,6 +24,7 @@ abstract: |
   Make sure it is long enough to work with the automatic dropcap.
 bibliography: bibliography.bib
 classoption: twocolumn
+nonblind: true
 ---
 
 ## Introduction {#sec-intro}
@@ -30,6 +33,8 @@ classoption: twocolumn
 
 
 You can cite with an `@` symbol, like @knuth1984texbook.
+
+
 
 ## References
 

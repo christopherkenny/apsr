@@ -40,8 +40,12 @@ $doc-class.tex()$
 % #3 = Brief author profile, or anything that you'd usually put in a \thanks. Leave blank {} if there's nothing to be said.
 
 %% These are used for the headers
-\runningtitle{APSR Submission Template}
-\runningauthor{Author One, Author Two, and Author Three} % 4 + Authors, Author One et al. 
+$if(runningtitle)$
+\runningtitle{$runningtitle$}
+$endif$
+$if(runningauthor)$
+\runningauthor{$runningauthor$}
+$endif$ 
 
 %% Useful packages
 \usepackage{amsmath}
