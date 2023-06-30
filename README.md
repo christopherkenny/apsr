@@ -27,11 +27,22 @@ format:
 
 ## Options
 
-*TODO*: If your format has options that can be set via document metadata, describe them.
+- This template is locked in to use `bibtex`.
+- Other options can be set using the `classoption` in the header:
+  - `twocolumn`: Switch to two column for main text
+  - `singlespace`/`onehalfspace`/**`doublespace`**: 
+         changes line spacing for main text
+  - **`blind`**/`nonblind`: Anonymises authors 
+         and affiliations, or not
+    - this option can also be set by making `nonblind: true` in the header
+
 
 ## Example
 
 Here is the source code for a minimal sample document: [template.qmd](template.qmd).
+
+<!-- pdftools::pdf_convert('template.pdf',pages = 1) -->
+![[template.qmd](template.qmd)](template_1.png)
 
 
 ## License
