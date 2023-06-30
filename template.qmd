@@ -29,7 +29,7 @@ nonblind: true
 
 ## Introduction {#sec-intro}
 
-\dropcap{Thanks} for using ~Overleaf~ Quarto to write your article. This Quarto template is unofficial and based on Overleaf's APSR tempalte. Your introduction goes here! Do make sure the first paragraph here is at least three lines long, to accommodate the dropped-cap. Some examples of commonly used commands and features are listed below, to help you get started.
+\dropcap{Thanks} for using Quarto to write your article. This Quarto template is unofficial and based on Overleaf's APSR template. Your introduction goes here! Do make sure the first paragraph here is at least three lines long, to accommodate the dropped-cap. Some examples of commonly used commands and features are listed below, to help you get started.
 
 Since we are in Quarto, you can cite with an `@` symbol, like @knuth1984texbook. As seen below, you can mix markdown and Latex with each other, though it's likely best to mostly use markdown.
 
@@ -74,7 +74,7 @@ Notes can be added to the bottom of figures and tables using the \verb|\floatnot
 ```{=tex}
 \begin{table*}
 \caption{Automobile Land Speed Records (GR 5-10).}
-\label{tab:wide}
+\label{tab-wide}
 
 \begin{tabular}{l l l l r}
 Speed (mph) & Driver          & Car                        & Engine    & Date     \\
@@ -97,4 +97,59 @@ Speed (mph) & Driver          & Car                        & Engine    & Date   
 
 \end{table*}
 ```
+
+For wide, double-column figures and tables, use the \verb|figure*| (Figure \ref{fig:wide}) or \verb|table*| (Table \ref{tab-wide}) starred environments. Landscaped figures and tables can be obtained using the \texttt{sidewaysfigure} and \texttt{sidewaysfigure} commands from the \texttt{rotating} package. Alternatively, you can use the \texttt{landscape} environment from the \texttt{pdflscape} package.
+
+Multi-page tables can be created using the \texttt{longtable} and \texttt{supertabular} packages, though note that \texttt{longtable}s cannot be used in two-column documents.\footnote{This is an example footnote. \lipsum[1]}
+
+
+Currently \texttt{table}, \texttt{table*}, \texttt{figure}, \texttt{figure*}, \texttt{longtable}, \texttt{supertabular}, \texttt{sidewaystable} and \texttt{sidewaysfigure} will be automatically framed.
+
+If you are using a custom figure or table environment from a package (e.g.~a \texttt{MyFigure} environment) and it's not getting framed, add \verb|\makeframedenv{MyFigure}| in the preamble. 
+
+### Lists and Quotations
+
+You can make lists with automatic numbering \dots
+
+1. Like this,
+2. and like this.
+
+
+\dots or bullet points \dots
+
+- Like this,
+- and like this.
+
+
+An example long quotation:
+
+> This is a sample quotation text. This is a sample quotation text. This is a sample quotation text.
+
+## Citations
+
+Quarto formats citations and references automatically using the bibliography records in your .bib file. For a citation in parentheses use [@greenwade93] and for a text citation: @greenwade93. Multiple citations can be given as [@greenwade93;@knuth1984texbook]. Drop the author like so [-@greenwade93].
+
+If your manuscript is accepted, the APSR production team will re-format the references for publication. \emph{It is not necessary to format the reference list yourself to mirror the final published form.}
+
+## Mathematics
+
+Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
+\begin{equation}
+\label{eq:CLT}
+S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
+      = \frac{1}{n}\sum_{i}^{n} X_i
+\end{equation}
+denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
+
+\begin{figure*}
+\centering
+\caption{A wide figure}\label{fig:wide}
+\includegraphics[width=\linewidth]{example-image-16x9}
+\end{figure*}
+
+
+\input{tableex2}
+
+\clearpage
+
 ## References
