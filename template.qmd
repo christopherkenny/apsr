@@ -29,12 +29,72 @@ nonblind: true
 
 ## Introduction {#sec-intro}
 
-\dropcap{TODO} Create a template that demonstrates the appearance, formatting, layout, and functionality of your format. Learn more about journal formats at <https://quarto.org/docs/journals/>.
+\dropcap{Thanks} for using ~Overleaf~ Quarto to write your article. This Quarto template is unofficial and based on Overleaf's APSR tempalte. Your introduction goes here! Do make sure the first paragraph here is at least three lines long, to accommodate the dropped-cap. Some examples of commonly used commands and features are listed below, to help you get started.
+
+Since we are in Quarto, you can cite with an `@` symbol, like @knuth1984texbook. As seen below, you can mix markdown and Latex with each other, though it's likely best to mostly use markdown.
+
+```{=tex}
+\section{Some \LaTeX{} Examples}
+\label{sec:examples}
+```
+Use section and subsection commands to organize your document. \LaTeX{} handles all the formatting and numbering automatically. Use \verb|\ref| and \verb|\label| commands for cross-references.
+
+## Figures and Tables
+
+Use the table and tabular commands for basic tables --- see Table \ref{tab-widgets}, for example. \href{http://tablesgenerator.com}{TablesGenerator.com} is a handy tool for designing tables and generating the LaTeX code, which you can copy and paste into your article here.
+
+```{=tex}
+\begin{table}[hbt!]
+\caption{An example table}
+\label{tab-widgets}
+\centering
+\begin{tabular}{lr}
+Item & Quantity \\\midrule
+Widgets & 42 \\
+Gadgets & 13
+\end{tabular}
+\floatnote{This is a note for this table.}
+\end{table}
+```
 
 
-You can cite with an `@` symbol, like @knuth1984texbook.
+To include it in your document, use the \verb\|graphicx\| package and the \verb\|\\includegraphics\| command as in the code for Figure \ref{fig:view}.
 
+```{=tex}
+\begin{figure}[hbt!]
+\includegraphics[width=\linewidth]{example-image}
+\caption{A figure example.}
+\label{fig:view}
 
+\floatnote{This is a note for this figure.}
+\end{figure}
+```
+Notes can be added to the bottom of figures and tables using the \verb|\floatnote| command.
 
+```{=tex}
+\begin{table*}
+\caption{Automobile Land Speed Records (GR 5-10).}
+\label{tab:wide}
+
+\begin{tabular}{l l l l r}
+Speed (mph) & Driver          & Car                        & Engine    & Date     \\
+\midrule
+407.447     & Craig Breedlove & Spirit of America          & GE J47    & 8/5/63   \\
+413.199     & Tom Green       & Wingfoot Express           & WE J46    & 10/2/64  \\
+434.22      & Art Arfons      & Green Monster              & GE J79    & 10/5/64  \\
+468.719     & Craig Breedlove & Spirit of America          & GE J79    & 10/13/64 \\
+526.277     & Craig Breedlove & Spirit of America          & GE J79    & 10/15/65 \\
+536.712     & Art Arfons      & Green Monster              & GE J79    & 10/27/65 \\
+555.127     & Craig Breedlove & Spirit of America, Sonic 1 & GE J79    & 11/2/65  \\
+576.553     & Art Arfons      & Green Monster              & GE J79    & 11/7/65  \\
+600.601     & Craig Breedlove & Spirit of America, Sonic 1 & GE J79    & 11/15/65 \\
+622.407     & Gary Gabelich   & Blue Flame                 & Rocket    & 10/23/70 \\
+633.468     & Richard Noble   & Thrust 2                   & RR RG 146 & 10/4/83  \\
+763.035     & Andy Green      & Thrust SSC                 & RR Spey   & 10/15/97\\
+\end{tabular}
+
+\floatnote{\url{https://www.sedl.org/afterschool/toolkits/science/pdf/ast_sci_data_tables_sample.pdf}}
+
+\end{table*}
+```
 ## References
-
