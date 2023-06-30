@@ -3,7 +3,6 @@ title: Quarto Title for the APSR
 format:
   apsr-pdf:
     keep-tex: false  
-  apsr-html: default
 runningtitle: Quarto APSR
 runningauthor: "One, Two, and Three"
 author:
