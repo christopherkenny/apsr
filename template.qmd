@@ -8,32 +8,28 @@ author:
   - name: Sarah Malloc
     affiliations:
       - name: An Organization
-        department: The Department
-        address: 1 Main St
-        city: Boston
-        country: USA
-        postal-code: 02210-1022
-      - A second affilication
-    orcid: 0000-0000-0000-0000
-    email: sm@example.org
-    url: https://example.org/
+    note: "Author One is PhD Candidate, ABC Department, Affiliation A, 12345 NY. (a.1@example.edu)"
   - name: Eliza Dealloc
     affiliations:
       - Another Affiliation
+    note: "Author Two is Assistant Professor, Faculty of Z, Affiliation B, 42813. Corresponding Author (a.2@acme.edu) Additional notes about Author Two."
+  - name: Author Three
+    affiliations:
+      - A Third Organization
+    note: "Author Three is ..."
 abstract: |
   This document is a template demonstrating the APSR format.
   Make sure it is long enough to work with the automatic dropcap.
-keywords: [template, demo]
 bibliography: bibliography.bib
-nonblind: true
+classoption: twocolumn
 ---
 
 ## Introduction {#sec-intro}
 
-*\dropcap{TODO}* Create a template that demonstrates the appearance, formatting, layout, and functionality of your format. Learn more about journal formats at <https://quarto.org/docs/journals/>.
+\dropcap{TODO} Create a template that demonstrates the appearance, formatting, layout, and functionality of your format. Learn more about journal formats at <https://quarto.org/docs/journals/>.
 
 
-You can cite with @knuth1984texbook
+You can cite with an `@` symbol, like @knuth1984texbook.
 
 ## References
 

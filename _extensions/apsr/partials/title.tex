@@ -1,3 +1,19 @@
 $if(title)$
 \title{$title$}
 $endif$
+
+$for(by-author)$
+  \author{$by-author.name.literal$}{%
+  $if(by-author.affiliations)$
+    $for(by-author.affiliations)$
+      $if(by-author.affiliations.name)$
+         $by-author.affiliations.name$
+      $endif$
+  }{%
+      $if(by-author.note)$
+          $by-author.note.text$
+      $endif$
+  }
+    $endfor$
+  $endif$
+$endfor$
