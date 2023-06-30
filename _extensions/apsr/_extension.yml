@@ -11,6 +11,8 @@ contributes:
       template: template.tex
       template-partials:
         - "partials/before-body.tex"
+        - "partials/title.tex"
+        - "partials/doc-class.tex"
       format-resources:
         - apsr_submission.cls
         - chicago_apsr.bst

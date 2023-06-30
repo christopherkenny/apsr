@@ -22,12 +22,18 @@ author:
       - Another Affiliation
 abstract: |
   This document is a template demonstrating the APSR format.
+  Make sure it is long enough to work with the automatic dropcap.
 keywords: [template, demo]
-bibliography: bibliography.bib  
+bibliography: bibliography.bib
+nonblind: true
 ---
 
 ## Introduction {#sec-intro}
 
-*TODO* Create a template that demonstrates the appearance, formatting, layout, and functionality of your format. Learn more about journal formats at <https://quarto.org/docs/journals/>.
+*\dropcap{TODO}* Create a template that demonstrates the appearance, formatting, layout, and functionality of your format. Learn more about journal formats at <https://quarto.org/docs/journals/>.
 
+
+You can cite with @knuth1984texbook
+
+## References
 
