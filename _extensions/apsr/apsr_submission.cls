@@ -89,7 +89,7 @@
 \RequirePackage{setspace}
 \RequirePackage{lastpage}
 
-\AtBeginDocument{\RequirePackage[hidelinks]{hyperref}}
+%\AtBeginDocument{\RequirePackage[hidelinks]{hyperref}}
 
 \setcounter{DefaultLines}{3}
 \setlength{\DefaultFindent}{0.25em}

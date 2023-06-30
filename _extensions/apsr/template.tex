@@ -27,7 +27,7 @@
 %%% disable it first while actively editing, and only
 %%% enable it when you're ready to take stock and check
 %%% on your work.
-\documentclass[bibtex,autowc]{apsr_submission}
+\documentclass[bibtex]{apsr_submission}
 % \totalwordcount{500}
 
 %% Example alternative options with everything the opposite of the above: (DO NOT USE AUTOWC WITH BIBLATEX; the word count will be greatly over-reported)
@@ -58,6 +58,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{rotating}
+\usepackage[hidelinks]{hyperref}
 
 %% If you are using a custom figure or table environment from a package and it's not getting framed, add \makeframedenv{MyFigure} in the preamble, where the custom figure environment is \begin{MyFigure}...\end{MyFigure}.
 %% Currently table, table*, figure, figure*, longtable, supertabular, sidewaystable and sidewaysfigure will be automatically framed.
@@ -75,6 +76,11 @@
 % \addbibresource{sample.bib}
 
 \begin{document}
+
+$before-body.tex()$
+$for(include-before)$
+$include-before$
+$endfor$
 
 %% body from qmd
 $body$
