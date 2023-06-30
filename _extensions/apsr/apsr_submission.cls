@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% apsr_submission.cls, v1.2, 2020/02/14
+% apsr_submission.cls, v1.3, 2023/06/30
 % Developed by Overleaf
 % 
 % This class file enables authors to prepare 
@@ -10,7 +10,7 @@
 % v1.2: Updates autowc to be compatible with Overleaf's build flow
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{apsr_submission}[2020/02/14 v1.2]
+\ProvidesClass{apsr_submission}[2023/06/30 v1.3]
 
 \newif\if@biblatex
 \newif\if@blind
@@ -280,7 +280,8 @@
 
 \if@biblatex
   \RequirePackage{csquotes}
-  \RequirePackage[natbib,style=chicago-authordate,backend=biber,sorting=nyt]{biblatex}
+  % v1.3 2023-06-30: new way of loading biblatex-chicago
+  \RequirePackage[natbib,authordate,sorting=nyt]{biblatex-chicago}
 \else
   \RequirePackage{natbib}
   \bibliographystyle{chicago-apsr}
