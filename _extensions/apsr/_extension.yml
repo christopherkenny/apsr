@@ -9,6 +9,8 @@ contributes:
     pdf:
       documentclass: apsr_submission
       template: template.tex
+      template-partials:
+        - "partials/before-body.tex"
       format-resources:
         - apsr_submission.cls
 
