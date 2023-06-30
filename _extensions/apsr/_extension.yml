@@ -13,4 +13,5 @@ contributes:
         - "partials/before-body.tex"
       format-resources:
         - apsr_submission.cls
+        - chicago_apsr.bst
 
