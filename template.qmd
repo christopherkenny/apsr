@@ -61,7 +61,7 @@ To include it in your document, use the \verb\|graphicx\| package and the \verb\
 
 ```{=tex}
 \begin{figure}[hbt!]
-\includegraphics[width=\linewidth]{example-image}
+\includegraphics[width=\linewidth]{figs/example-image}
 \caption{A figure example.}
 \label{fig:view}
 
@@ -143,11 +143,11 @@ denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{
 \begin{figure*}
 \centering
 \caption{A wide figure}\label{fig:wide}
-\includegraphics[width=\linewidth]{example-image-16x9}
+\includegraphics[width=\linewidth]{figs/example-image-16x9}
 \end{figure*}
 
 
-\input{tableex2}
+\input{figs/tableex2}
 
 \clearpage
 
