@@ -161,6 +161,15 @@ $if(highlighting-macros)$
 $highlighting-macros$
 $endif$
 % end big ole copy and paste
+
+% all the partials!
+$tightlist.tex()$
+$tables.tex()$
+$graphics.tex()$
+
+$for(header-includes)$
+$header-includes$
+$endfor$
 $pandoc.tex$
 
 $title.tex()$
