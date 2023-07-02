@@ -10,7 +10,7 @@ author:
     affiliations:
       - name: An Organization
     note: "Author One is PhD Candidate, ABC Department, Affiliation A, 12345 NY. (a.1@example.edu)"
-  - name: Eliza Dealloc
+  - name: Author Two
     affiliations:
       - Author Two
     note: "Author Two is Assistant Professor, Faculty of Z, Affiliation B, 42813. Corresponding Author (a.2@acme.edu) Additional notes about Author Two."
