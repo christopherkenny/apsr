@@ -68,6 +68,11 @@ To include it in your document, use the \verb\|graphicx\| package and the \verb\
 \floatnote{This is a note for this figure.}
 \end{figure}
 ```
+
+You can also include figures using Quarto syntax.
+
+![A figure example.](figs/example-image.png){#fig-view2}
+
 Notes can be added to the bottom of figures and tables using the \verb|\floatnote| command.
 
 ```{=tex}
@@ -140,12 +145,20 @@ S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
 \end{equation}
 denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
 
-\begin{figure*}
-\centering
-\caption{A wide figure}\label{fig:wide}
-\includegraphics[width=\linewidth]{figs/example-image-16x9}
-\end{figure*}
 
+## Wide Figures
+
+To include the widest of figures, set the `fig-env` to `figure*` in a Quarto chunk, just as you would set the environment to `figure*` in LaTeX. For some figures, you may also need to tell it to have `out-width: 100%` if the figure is naturally smaller than the width of the page.
+
+```{r}
+#| echo: false
+#| fig-env: "figure*"
+#| fig-cap: "A wide figure"
+#| out-width: 100%
+knitr::include_graphics('figs/example-image-16x9.png')
+```
+
+Finally, you can include tex tables from other files as usual.
 
 \input{figs/tableex2}
 
