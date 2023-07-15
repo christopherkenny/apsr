@@ -25,6 +25,7 @@ abstract: |
 bibliography: bibliography.bib
 classoption: twocolumn
 nonblind: true
+word-count: 500
 ---
 
 ## Introduction {#sec-intro}
