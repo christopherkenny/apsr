@@ -12,7 +12,7 @@ author:
     note: "Author One is PhD Candidate, ABC Department, Affiliation A, 12345 NY. (a.1@example.edu)"
   - name: Author Two
     affiliations:
-      - Author Two
+      - Affiliation B
     note: "Author Two is Assistant Professor, Faculty of Z, Affiliation B, 42813. Corresponding Author (a.2@acme.edu) Additional notes about Author Two."
   - name: Author Three
     affiliations:
