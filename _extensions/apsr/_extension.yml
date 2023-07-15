@@ -8,7 +8,7 @@ contributes:
       toc: false
     pdf:
       documentclass: apsr_submission
-      template: template.tex
+      include-in-header: header.tex
       template-partials:
         - "partials/before-body.tex"
         - "partials/title.tex"
