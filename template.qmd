@@ -2,7 +2,7 @@
 title: Quarto Title for the APSR
 format:
   apsr-pdf:
-    keep-tex: false  
+    keep-tex: true  
 runningtitle: Quarto APSR
 runningauthor: "One, Two, and Three"
 author:
@@ -21,6 +21,7 @@ author:
 abstract: |
   This document is a template demonstrating the APSR format.
   Make sure it is long enough to work with the automatic dropcap.
+  That means you need at least three lines worth of text. 
 bibliography: bibliography.bib
 classoption: twocolumn
 nonblind: true
@@ -40,6 +41,11 @@ Use section and subsection commands to organize your document. \LaTeX{} handles 
 
 ## Figures and Tables
 
+Beware: this template has a special first page style.
+Like many such templates, it behaves very poorly if it tries to place a figure on the first page of the outputted PDF.
+To avoid this problem, ensure that you have filled out at least some introductory paragraphs and the abstract before trying to render images immediately at the start of the paper.
+You may find the [lorem R package](https://github.com/gadenbuie/lorem) useful for generating placeholder text if you are experiencing this issue at the start of writing.
+
 Use the table and tabular commands for basic tables --- see Table \ref{tab-widgets}, for example. \href{http://tablesgenerator.com}{TablesGenerator.com} is a handy tool for designing tables and generating the LaTeX code, which you can copy and paste into your article here.
 
 ```{=tex}
@@ -57,13 +63,13 @@ Gadgets & 13
 ```
 
 
-To include it in your document, use the \verb\|graphicx\| package and the \verb\|\\includegraphics\| command as in the code for Figure \ref{fig:view}.
+To include it in your document, use the `graphicx` package and the `\includegraphics` command as in the code for Figure \ref{fig-view}.
 
 ```{=tex}
 \begin{figure}[hbt!]
 \includegraphics[width=\linewidth]{figs/example-image}
 \caption{A figure example.}
-\label{fig:view}
+\label{fig-view}
 
 \floatnote{This is a note for this figure.}
 \end{figure}
@@ -104,7 +110,7 @@ Speed (mph) & Driver          & Car                        & Engine    & Date   
 
 For wide, double-column figures and tables, use the \verb|figure*| (Figure \ref{fig:wide}) or \verb|table*| (Table \ref{tab-wide}) starred environments. Landscaped figures and tables can be obtained using the \texttt{sidewaysfigure} and \texttt{sidewaysfigure} commands from the \texttt{rotating} package. Alternatively, you can use the \texttt{landscape} environment from the \texttt{pdflscape} package.
 
-Multi-page tables can be created using the \texttt{longtable} and \texttt{supertabular} packages, though note that \texttt{longtable}s cannot be used in two-column documents.\footnote{This is an example footnote. \lipsum[1]}
+Multi-page tables can be created using the \texttt{longtable} and \texttt{supertabular} packages, though note that \texttt{longtable}s cannot be used in two-column documents.\footnote{This is an example footnote.}
 
 
 Currently \texttt{table}, \texttt{table*}, \texttt{figure}, \texttt{figure*}, \texttt{longtable}, \texttt{supertabular}, \texttt{sidewaystable} and \texttt{sidewaysfigure} will be automatically framed.

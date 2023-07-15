@@ -46,7 +46,7 @@
     \RequirePackage[utf8]{inputenc}
 \fi\fi
 \RequirePackage[T1]{fontenc}
-\RequirePackage{newtxtext,newtxmath}
+\RequirePackage{newtxtext}%,newtxmath}%CTK fixes clash with pandoc amsmath
 \RequirePackage{microtype}
 \RequirePackage{textcase}
 \RequirePackage{lettrine}
