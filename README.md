@@ -30,12 +30,10 @@ format:
 - `word-count`: Specify the word count. This can be calculated with a [wordcountaddin](https://github.com/benmarwick/wordcountaddin).
 - `runningtitle`: a short paper title
 - `runningauthor`: author names, listed out if less than 4, or First Author et al. if 4 or more.
-- Some options can be set using the `classoption` in the header:
+- Additional options can be set using the `classoption` in the header, related to columns, spacing, blinding, and citation generation:
   - `twocolumn`: Switch to two column for main text
-  - `singlespace`/`onehalfspace`/**`doublespace`**: 
-         changes line spacing for main text
-  - **`blind`**/`nonblind`: Anonymises authors 
-         and affiliations, or not
+  - `singlespace`/`onehalfspace`/**`doublespace`**: changes line spacing for main text
+  - **`blind`**/`nonblind`: Anonymises authors and affiliations, or not. Default is blind.
     - this option can also be set by making `nonblind: true` in the header
   - **`bibtex`** is the default when no citation style is specified.
 

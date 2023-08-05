@@ -1,5 +1,5 @@
 ---
-title: Quarto Title for the APSR
+title: "Quarto Title for the *APSR*"
 format:
   apsr-pdf:
     keep-tex: true  
@@ -28,7 +28,7 @@ nonblind: true
 word-count: "{{wordcountref}}" # or set it manually like 500
 ---
 
-## Introduction {#sec-intro}
+# Introduction {#sec-intro}
 
 \dropcap{Thanks} for using Quarto to write your article. This Quarto template is unofficial and based on Overleaf's APSR template. Your introduction goes here! Do make sure the first paragraph here is at least three lines long, to accommodate the dropped-cap. Some examples of commonly used commands and features are listed below, to help you get started.
 
@@ -38,25 +38,25 @@ Use section (`#`) and subsection (`##`) commands to organize your document.
 \LaTeX{} and Quarto handle all the formatting and numbering automatically. 
 Use the `@` commands for cross-references.
 
-## Word Count
+# Word Count
 
 This template uses a wordcount lua filter from <https://github.com/christopherkenny/wordcount>.
 To include the word count including references, set `word-count: {{wordcountref}}`.
 To remove references from the word count, set `word-count: {{wordcount}}`.
 
-## Figures and Tables
+# Figures and Tables
 
 Beware: this template has a special first page style.
 Like many such templates, it behaves very poorly if it tries to place a figure on the first page of the outputted PDF.
 To avoid this problem, ensure that you have filled out at least some introductory paragraphs and the abstract before trying to render images immediately at the start of the paper.
 You may find the [lorem R package](https://github.com/gadenbuie/lorem) useful for generating placeholder text if you are experiencing this issue at the start of writing.
 
-Use the table and tabular commands for basic tables --- see @tab-widgets, for example. [TablesGenerator.com](http://tablesgenerator.com) is a handy tool for designing tables and generating the LaTeX code, which you can copy and paste into your article here.
+Use the table and tabular commands for basic tables --- see @tbl-widgets, for example. [TablesGenerator.com](http://tablesgenerator.com) is a handy tool for designing tables and generating the LaTeX code, which you can copy and paste into your article here.
 
 ```{=tex}
 \begin{table}[hbt!]
 \caption{An example table}
-\label{tab-widgets}
+\label{tbl-widgets}
 \centering
 \begin{tabular}{lr}
 Item & Quantity \\\midrule
@@ -84,12 +84,26 @@ You can also include figures using Quarto syntax.
 
 ![A figure example.](figs/example-image.png){#fig-view2}
 
+Finally, you can also create figures using R, like in @fig-r:
+
+```{r fig-r}
+#| label: "fig-r"
+#| fig-cap: Example figure from R.
+
+library(ggplot2)
+mpg |>
+  ggplot() +
+  geom_density(aes(x = cty, fill = factor(cyl)), alpha = 0.7) + 
+  theme_bw()
+```
+
+
 Notes can be added to the bottom of figures and tables using the `\floatnote` command.
 
 ```{=tex}
 \begin{table*}
 \caption{Automobile Land Speed Records (GR 5-10).}
-\label{tab-wide}
+\label{tbl-wide}
 
 \begin{tabular}{l l l l r}
 Speed (mph) & Driver          & Car                        & Engine    & Date     \\
@@ -113,7 +127,21 @@ Speed (mph) & Driver          & Car                        & Engine    & Date   
 \end{table*}
 ```
 
-For wide, double-column figures and tables, use the `figure*` (Figure \ref{fig:wide}) or `table*` (@tab-wide) starred environments. Landscaped figures and tables can be obtained using the `sidewaysfigure` and `sidewaysfigure` commands from the `rotating` package. Alternatively, you can use the `landscape` environment from the `pdflscape` package.
+Tables can also be made using common table-making packages, like [`kableExtra`](https://cran.r-project.org/web/packages/kableExtra/index.html), as in @tbl-r.
+Though formatting may be more finicky. 
+There is not currently a way to change the underlying environment to a `table*` environment within Quarto for these types of chunks.
+
+```{r}
+#| label: tbl-r
+#| tbl-cap: Example R table.
+mtcars[, 1:3] |> 
+  head() |> 
+  kableExtra::kable()
+```
+
+
+
+For wide, double-column figures and tables, use the `figure*` (Figure \ref{fig:wide}) or `table*` (@tbl-wide) starred environments. Landscaped figures and tables can be obtained using the `sidewaysfigure` and `sidewaysfigure` commands from the `rotating` package. Alternatively, you can use the `landscape` environment from the `pdflscape` package.
 
 Multi-page tables can be created using the `longtable` and `supertabular` packages, though note that `longtable`s cannot be used in two-column documents.\footnote{This is an example footnote.}
 
@@ -122,7 +150,7 @@ Currently `table`, `table*`, `figure`, `figure*`, `longtable`, `supertabular`, `
 
 If you are using a custom figure or table environment from a package (e.g.~a `MyFigure` environment) and it's not getting framed, add `\makeframedenv{MyFigure}` in the preamble. 
 
-### Lists and Quotations
+## Lists and Quotations
 
 You can make lists with automatic numbering \dots
 
@@ -140,13 +168,13 @@ An example long quotation:
 
 > This is a sample quotation text. This is a sample quotation text. This is a sample quotation text.
 
-## Citations
+# Citations
 
 Quarto formats citations and references automatically using the bibliography records in your .bib file. For a citation in parentheses use [@greenwade93] and for a text citation: @greenwade93. Multiple citations can be given as [@greenwade93;@knuth1984texbook]. Drop the author like so [-@greenwade93].
 
 If your manuscript is accepted, the APSR production team will re-format the references for publication. \emph{It is not necessary to format the reference list yourself to mirror the final published form.}
 
-## Mathematics
+# Mathematics
 
 Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
 \begin{equation}
@@ -157,7 +185,7 @@ S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
 denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
 
 
-## Wide Figures
+# Wide Figures
 
 To include the widest of figures, set the `fig-env` to `figure*` in a Quarto chunk, just as you would set the environment to `figure*` in LaTeX. For some figures, you may also need to tell it to have `out-width: 100%` if the figure is naturally smaller than the width of the page.
 
@@ -175,4 +203,4 @@ Finally, you can include tex tables from other files as usual.
 
 \clearpage
 
-## References
+# References
