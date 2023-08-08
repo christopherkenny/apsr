@@ -8,6 +8,7 @@ contributes:
       toc: false
       filters:
         - wordcount.lua
+      pdf-engine: pdflatex
     pdf:
       documentclass: apsr_submission
       include-in-header: header.tex

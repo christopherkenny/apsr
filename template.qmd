@@ -21,7 +21,9 @@ author:
 abstract: |
   This document is a template demonstrating the APSR format.
   Make sure it is long enough to work with the automatic dropcap.
-  That means you need at least three lines worth of text. 
+  That means you need at least three lines worth of text. That is a lot of
+  text for this example, but the APSR allows 150 words in the abstract at the
+  time of writing this example.
 bibliography: bibliography.bib
 classoption: twocolumn
 nonblind: true
