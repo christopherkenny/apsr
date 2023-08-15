@@ -2,7 +2,7 @@
 title: "Quarto Title for the *APSR*"
 format:
   apsr-pdf:
-    keep-tex: true  
+    keep-tex: false  
 runningtitle: Quarto APSR
 runningauthor: "One, Two, and Three"
 author:
@@ -28,6 +28,8 @@ bibliography: bibliography.bib
 classoption: twocolumn
 nonblind: true
 word-count: "{{wordcountref}}" # or set it manually like 500
+execute: 
+  echo: false
 ---
 
 # Introduction {#sec-intro}
@@ -88,9 +90,10 @@ You can also include figures using Quarto syntax.
 
 Finally, you can also create figures using R, like in @fig-r:
 
-```{r fig-r}
+```{r, echo=FALSE}
 #| label: "fig-r"
 #| fig-cap: Example figure from R.
+#| echo: false
 
 library(ggplot2)
 mpg |>
