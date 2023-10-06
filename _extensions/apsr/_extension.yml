@@ -17,12 +17,11 @@ contributes:
         - "partials/title.tex"
         - "partials/doc-class.tex"
       format-resources:
-        - apsr_submission.cls
-        - chicago_apsr.bst
+        - "apsr_submission.cls"
+        - "chicago_apsr.bst"
     html:
       number-sections: false
       toc: false
-      theme: custom.scss
       # Use a CSL file to style (https://www.zotero.org/styles/)
       csl: https://www.zotero.org/styles/american-political-science-review
 
