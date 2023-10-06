@@ -199,8 +199,13 @@ To include the widest of figures, set the `fig-env` to `figure*` in a Quarto chu
 #| fig-env: "figure*"
 #| fig-cap: "A wide figure"
 #| out-width: 100%
+#| out-extra: "\\floatnote{Place a full caption here.}"
 knitr::include_graphics('figs/example-image-16x9.png')
 ```
+
+Note above that we use `out-extra` to pass a full caption to the table.
+Due to the setup of the original LaTeX template that this is built on, Quarto's `fig-cap` is primarily a title.
+To give a longer caption, we can use `out-extra` with `\\floatnote{}`.
 
 Finally, you can include tex tables from other files as usual.
 
