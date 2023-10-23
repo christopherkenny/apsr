@@ -146,7 +146,7 @@ mtcars[, 1:3] |>
 
 
 
-For wide, double-column figures and tables, use the `figure*` (Figure \ref{fig:wide}) or `table*` (@tbl-wide) starred environments. Landscaped figures and tables can be obtained using the `sidewaysfigure` and `sidewaysfigure` commands from the `rotating` package. Alternatively, you can use the `landscape` environment from the `pdflscape` package.
+For wide, double-column figures and tables, use the `figure*` (Figure \ref{fig-wide}) or `table*` (@tbl-wide) starred environments. Landscaped figures and tables can be obtained using the `sidewaysfigure` and `sidewaysfigure` commands from the `rotating` package. Alternatively, you can use the `landscape` environment from the `pdflscape` package.
 
 Multi-page tables can be created using the `longtable` and `supertabular` packages, though note that `longtable`s cannot be used in two-column documents.\footnote{This is an example footnote.}
 
@@ -195,6 +195,7 @@ denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{
 To include the widest of figures, set the `fig-env` to `figure*` in a Quarto chunk, just as you would set the environment to `figure*` in LaTeX. For some figures, you may also need to tell it to have `out-width: 100%` if the figure is naturally smaller than the width of the page.
 
 ```{r}
+#| label: "fig-wide"
 #| echo: false
 #| fig-env: "figure*"
 #| fig-cap: "A wide figure"
