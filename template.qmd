@@ -2,7 +2,7 @@
 title: "Quarto Title for the *APSR*"
 format:
   apsr-pdf:
-    keep-tex: false  
+    keep-tex: true  
 runningtitle: Quarto APSR
 runningauthor: "One, Two, and Three"
 author:
@@ -194,21 +194,26 @@ denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{
 
 To include the widest of figures, set the `fig-env` to `figure*` in a Quarto chunk, just as you would set the environment to `figure*` in LaTeX. For some figures, you may also need to tell it to have `out-width: 100%` if the figure is naturally smaller than the width of the page.
 
+To give a long caption, the easiest thing to do is to add a chunk like this right before it.
+The upstream LaTeX template uses `floatnote`s for the long caption and `fig-cap` for the title.
+`floatnote`s latch onto the next float, so they should be placed right before the float they are meant to describe.
+
+```{=tex}
+\floatnote{This is a wide figure.}
+```
+
 ```{r}
 #| label: "fig-wide"
 #| echo: false
 #| fig-env: "figure*"
 #| fig-cap: "A wide figure"
-#| out-width: 100%
-
+#| out-width: 95%
 knitr::include_graphics('figs/example-image-16x9.png')
 ```
 
-Note above that we use `out-extra` to pass a full caption to the table.
-Due to the setup of the original LaTeX template that this is built on, Quarto's `fig-cap` is primarily a title.
-To give a longer caption, we can use `out-extra` with `\\floatnote{}`.
-
 Finally, you can include tex tables from other files as usual.
+This can make use of input, though you may also find use for shortcodes from Quarto.
+Built in shortcodes are listed [here](https://quarto.org/docs/extensions/shortcodes.html).
 
 \input{figs/tableex2}
 
