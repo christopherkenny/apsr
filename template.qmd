@@ -2,7 +2,7 @@
 title: "Quarto Title for the *APSR*"
 format:
   apsr-pdf:
-    keep-tex: true  
+    keep-tex: false
 runningtitle: Quarto APSR
 runningauthor: "One, Two, and Three"
 author:
@@ -28,7 +28,7 @@ bibliography: bibliography.bib
 classoption: twocolumn
 nonblind: true
 word-count: "{{wordcountref}}" # or set it manually like 500
-execute: 
+execute:
   echo: false
 ---
 
@@ -38,8 +38,8 @@ execute:
 
 Since we are in Quarto, you can cite with an `@` symbol, like @knuth1984texbook. As seen below, you can mix markdown and Latex with each other, though it's likely best to mostly use markdown.
 
-Use section (`#`) and subsection (`##`) commands to organize your document. 
-\LaTeX{} and Quarto handle all the formatting and numbering automatically. 
+Use section (`#`) and subsection (`##`) commands to organize your document.
+\LaTeX{} and Quarto handle all the formatting and numbering automatically.
 Use the `@` commands for cross-references.
 
 # Word Count
@@ -72,38 +72,39 @@ Gadgets & 13
 ```
 
 
-To include it in your document, use the `graphicx` package and the `\includegraphics` command as in the code for @fig-view.
+To include a figure in your document, I recommend using a code chunk.
+You will want to set the floatnote property in the chunk.
+All figure labels should start with `fig-`.
 
-```{=tex}
-\begin{figure}[hbt!]
-\includegraphics[width=\linewidth]{figs/example-image}
-\caption{A figure example.}
-\label{fig-view}
-
-\floatnote{This is a note for this figure.}
-\end{figure}
+```{r}
+#| label: fig-view
+#| fig-cap: One way to include figures
+#| floatnote: This is a note for this figure.
+knitr::include_graphics('figs/example-image.png')
 ```
 
 You can also include figures using Quarto syntax.
 
 ![A figure example.](figs/example-image.png){#fig-view2}
 
-Finally, you can also create figures using R, like in @fig-r:
+
+Finally, you can also create figures using R in general, like in @fig-r:
 
 ```{r, echo=FALSE}
 #| label: "fig-r"
 #| fig-cap: Example figure from R.
 #| echo: false
+#| floatnote: "A ggplot"
 
 library(ggplot2)
 mpg |>
   ggplot() +
-  geom_density(aes(x = cty, fill = factor(cyl)), alpha = 0.7) + 
+  geom_density(aes(x = cty, fill = factor(cyl)), alpha = 0.7) +
   theme_bw()
 ```
 
 
-Notes can be added to the bottom of figures and tables using the `\floatnote` command.
+Notes can be added to the bottom of figures and tables in LaTeX using the `\floatnote` command.
 
 ```{=tex}
 \begin{table*}
@@ -133,18 +134,16 @@ Speed (mph) & Driver          & Car                        & Engine    & Date   
 ```
 
 Tables can also be made using common table-making packages, like [`kableExtra`](https://cran.r-project.org/web/packages/kableExtra/index.html), as in @tbl-r.
-Though formatting may be more finicky. 
+Though formatting may be more finicky.
 There is not currently a way to change the underlying environment to a `table*` environment within Quarto for these types of chunks.
 
 ```{r}
 #| label: tbl-r
 #| tbl-cap: Example R table.
-mtcars[, 1:3] |> 
-  head() |> 
+mtcars[, 1:3] |>
+  head() |>
   kableExtra::kable(format = 'latex')
 ```
-
-
 
 For wide, double-column figures and tables, use the `figure*` (Figure \ref{fig-wide}) or `table*` (@tbl-wide) starred environments. Landscaped figures and tables can be obtained using the `sidewaysfigure` and `sidewaysfigure` commands from the `rotating` package. Alternatively, you can use the `landscape` environment from the `pdflscape` package.
 
@@ -153,7 +152,7 @@ Multi-page tables can be created using the `longtable` and `supertabular` packag
 
 Currently `table`, `table*`, `figure`, `figure*`, `longtable`, `supertabular`, `sidewaystable` and `sidewaysfigure` will be automatically framed.
 
-If you are using a custom figure or table environment from a package (e.g.~a `MyFigure` environment) and it's not getting framed, add `\makeframedenv{MyFigure}` in the preamble. 
+If you are using a custom figure or table environment from a package (e.g.~a `MyFigure` environment) and it's not getting framed, add `\makeframedenv{MyFigure}` in the preamble.
 
 ## Lists and Quotations
 
@@ -194,20 +193,13 @@ denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{
 
 To include the widest of figures, set the `fig-env` to `figure*` in a Quarto chunk, just as you would set the environment to `figure*` in LaTeX. For some figures, you may also need to tell it to have `out-width: 100%` if the figure is naturally smaller than the width of the page.
 
-To give a long caption, the easiest thing to do is to add a chunk like this right before it.
-The upstream LaTeX template uses `floatnote`s for the long caption and `fig-cap` for the title.
-`floatnote`s latch onto the next float, so they should be placed right before the float they are meant to describe.
-
-```{=tex}
-\floatnote{This is a wide figure.}
-```
-
 ```{r}
 #| label: "fig-wide"
 #| echo: false
 #| fig-env: "figure*"
 #| fig-cap: "A wide figure"
 #| out-width: 95%
+#| floatnote: "This is a wide figure."
 knitr::include_graphics('figs/example-image-16x9.png')
 ```
 
@@ -218,4 +210,3 @@ Built in shortcodes are listed [here](https://quarto.org/docs/extensions/shortco
 \input{figs/tableex2}
 
 \clearpage
-

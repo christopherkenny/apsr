@@ -7,7 +7,10 @@ contributes:
     common:
       toc: false
       filters:
-        - wordcount.lua
+        - at: pre-ast
+          path: floatnote.lua
+        - at: post-quarto
+          path: wordcount.lua
       pdf-engine: pdflatex
     pdf:
       documentclass: apsr_submission
@@ -26,4 +29,3 @@ contributes:
       toc: false
       # Use a CSL file to style (https://www.zotero.org/styles/)
       csl: https://www.zotero.org/styles/american-political-science-review
-
