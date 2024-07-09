@@ -137,12 +137,11 @@ Though formatting may be more finicky.
 There is not currently a way to change the underlying environment to a `table*` environment within Quarto for these types of chunks.
 
 ```{r}
-#| eval: false
 #| label: tbl-r
 #| tbl-cap: Example R table.
 mtcars[, 1:3] |> 
   head() |> 
-  kableExtra::kable()
+  kableExtra::kable(format = 'latex')
 ```
 
 
