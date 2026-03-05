@@ -5,9 +5,9 @@
       "format:",
       "  apsr-pdf:",
       "    keep-tex: ${1:false}",
-      "runningtitle: ${2:Short title}",
-      "runningauthor: ${3:Author et al.}",
-      "word-count: \"${4:{{wordcountref}}}\""
+      "    runningtitle: ${2:Short title}",
+      "    runningauthor: ${3:Author et al.}",
+      "    word-count: \"${4:{{wordcountref}}}\""
     ],
     "description": "Insert APSR format settings with running title and word count metadata."
   },
