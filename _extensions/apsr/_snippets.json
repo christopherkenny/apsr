@@ -1,6 +1,6 @@
 {
   "apsr-pdf format": {
-    "prefix": "apsr-format",
+    "prefix": "format",
     "body": [
       "format:",
       "  apsr-pdf:",
@@ -12,7 +12,7 @@
     "description": "Insert APSR format settings with running title and word count metadata."
   },
   "APSR floatnote": {
-    "prefix": "apsr-floatnote",
+    "prefix": "floatnote",
     "body": [
       "\\floatnote{${1:This is a note for this float.}}"
     ],
