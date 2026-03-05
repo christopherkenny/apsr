@@ -1,0 +1,21 @@
+$schema: https://m.canouil.dev/quarto-wizard/assets/schema/v1/extension-schema.json
+
+formats:
+  apsr-pdf:
+    runningtitle:
+      type: string
+      description: Short running title used in page headers.
+    runningauthor:
+      type: string
+      description: Running author line used in page headers.
+    word-count:
+      type: string
+      description: Word count value or template token such as {{wordcountref}}.
+    nonblind:
+      type: boolean
+      description: Disable anonymous author mode.
+    classoption:
+      type: array
+      items:
+        type: string
+      description: Additional APSR document class options.
