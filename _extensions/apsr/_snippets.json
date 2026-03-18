@@ -1,0 +1,21 @@
+{
+  "apsr-pdf format": {
+    "prefix": "format",
+    "body": [
+      "format:",
+      "  apsr-pdf:",
+      "    keep-tex: ${1:false}",
+      "    runningtitle: ${2:Short title}",
+      "    runningauthor: ${3:Author et al.}",
+      "    word-count: \"${4:{{wordcountref}}}\""
+    ],
+    "description": "Insert APSR format settings with running title and word count metadata."
+  },
+  "APSR floatnote": {
+    "prefix": "floatnote",
+    "body": [
+      "\\floatnote{${1:This is a note for this float.}}"
+    ],
+    "description": "Insert a floatnote for APSR table/figure notes in LaTeX blocks."
+  }
+}
